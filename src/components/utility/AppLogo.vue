@@ -1,11 +1,13 @@
 <template>
-  <RouterLink
-    :to="{ name: logoLink }"
-    :class="['flex', 'items-center', 'font-heading', colorClass]"
-  >
-    <font-awesome-icon :icon="['fas', 'compass']" :class="[iconClass]" />
-    <span :class="['ml-2', 'font-bold', textClass]">Daily Spark</span>
-  </RouterLink>
+  <div>
+    <RouterLink
+      :to="{ name: logoLink }"
+      :class="['flex', 'items-center', 'font-heading', 'border-0', colorClass]"
+    >
+      <font-awesome-icon :icon="['fas', 'compass']" :class="[iconClass]" />
+      <span :class="['ml-2', 'font-bold', textClass]">Daily Spark</span>
+    </RouterLink>
+  </div>
 </template>
 
 <script setup>

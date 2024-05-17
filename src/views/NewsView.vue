@@ -1,5 +1,15 @@
 <template>
-  <h1>News</h1>
+  <TheHero />
 </template>
 
-<script setup></script>
+<script setup>
+import { useNewsStore } from '@/stores/news.js'
+import { onMounted } from 'vue'
+import TheHero from '@/components/TheHero.vue'
+
+const newsStore = useNewsStore()
+
+onMounted(() => {
+  newsStore.fetch_top_headlines()
+})
+</script>
