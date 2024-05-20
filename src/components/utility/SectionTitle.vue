@@ -1,5 +1,5 @@
 <template>
-  <h2 class="border-l-8 border-accent-primary px-2 py-1 text-lg font-heading font-bold tracking-wide">{{text}}</h2>
+  <h2 class="border-l-4 border-accent-primary px-2 my-4 text-lg font-heading font-bold tracking-wide">{{text}}</h2>
 </template>
 
 <script setup>

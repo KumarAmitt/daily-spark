@@ -14,11 +14,21 @@ export const useNewsStore = defineStore('news', () => {
       const featured = response.data.articles
       featuredStory.value = featured[0]
       featuredStories.value = featured.slice(1)
-      console.log(featuredStories)
+      // console.log(featuredStories)
     } catch (error) {
       console.log(error)
     }
   }
 
-  return { featuredStory, featuredStories, fetchTopHeadlines }
+  const fetchNewsByCategory = async (category) => {
+    const url = `${BASE_URL}/top-headlines?country=in&category=${category}&apiKey=${API_KEY}`
+    try {
+      const response = await axios.get(url)
+      return response.data.articles;
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  return { featuredStory, featuredStories, fetchTopHeadlines, fetchNewsByCategory }
 })

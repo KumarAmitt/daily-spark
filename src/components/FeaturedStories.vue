@@ -1,8 +1,10 @@
 <template>
-  <SectionTitle text="Featured Stories"/>
-  <ul class="border border-red-500 my-4 flex justify-between overflow-x-scroll">
-     <FeaturedStory v-for="article in articles" :key="article.title" :article="article" />
-  </ul>
+  <section class="my-4">
+    <SectionTitle text="Featured Stories"/>
+    <ul class="flex justify-between overflow-x-scroll">
+      <FeaturedStory v-for="article in articles" :key="article.title" :article="article" />
+    </ul>
+  </section>
 </template>
 
 <script setup>

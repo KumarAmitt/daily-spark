@@ -1,15 +1,17 @@
 <template>
-  <TheHero />
+  <TheHero/>
   <div class="p-10">
-   <FeaturedSection />
+    <FeaturedStories/>
+    <CategoryNews/>
   </div>
 </template>
 
 <script setup>
-import { useNewsStore } from '@/stores/news.js'
+import {useNewsStore} from '@/stores/news.js'
 import {onBeforeMount} from 'vue'
 import TheHero from '@/components/TheHero.vue'
-import FeaturedSection from "@/components/FeaturedSection.vue";
+import FeaturedStories from "@/components/FeaturedStories.vue";
+import CategoryNews from "@/components/CategoryNews.vue";
 
 
 const newsStore = useNewsStore()
