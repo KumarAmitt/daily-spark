@@ -1,9 +1,8 @@
 <template>
-    <div class="flex">
+    <div class="flex mt-20">
       <BusinessStories class="w-3/5"/>
       <SportsStories class="w-2/5" />
     </div>
-
 </template>
 
 <script setup>

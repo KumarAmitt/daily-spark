@@ -1,10 +1,14 @@
 <template>
-  <Section class="pl-6">
-    <SectionTitle text="Sports"/>
+  <section class="ml-4">
+    <div class="flex justify-between items-center">
+      <SectionTitle text="Sports"/>
+      <RouterLink :to="{name: 'category', params: {category: category}}">Read More</RouterLink>
+      <!--      <BaseButton text="Read More" outlined></BaseButton>-->
+    </div>
     <ul class="grid grid-cols-2 gap-4">
-      <SportStory v-for="article in topFiveArticles" :key="article.title" :article="article" />
+      <SportStory v-for="article in topFiveArticles" :key="article.title" :article="article"/>
     </ul>
-  </Section>
+  </section>
 </template>
 
 <script setup>
@@ -12,6 +16,7 @@ import {onMounted, ref, computed} from 'vue';
 import SectionTitle from "@/components/utility/SectionTitle.vue";
 import {useNewsStore} from "@/stores/news.js";
 import SportStory from "@/components/SportStory.vue";
+import BaseButton from "@/components/utility/BaseButton.vue";
 
 const newsStore = useNewsStore();
 const category = 'sports'

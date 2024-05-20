@@ -1,9 +1,12 @@
 <template>
-  <Section>
+  <section>
     <SectionTitle text="Business"/>
     <ul class="flex flex-col justify-between">
       <BusinessStory v-for="article in topFiveArticles" :key="article.title" :article="article"/>
     </ul>
+    <div class="mt-2 text-center">
+      <BaseButton text="View More" outlined></BaseButton>
+    </div>
   </Section>
 </template>
 
@@ -12,6 +15,7 @@ import {onMounted, ref, computed} from 'vue';
 import SectionTitle from "@/components/utility/SectionTitle.vue";
 import {useNewsStore} from "@/stores/news.js";
 import BusinessStory from "@/components/BusinessStory.vue";
+import BaseButton from "@/components/utility/BaseButton.vue";
 
 const newsStore = useNewsStore();
 const category = 'business'

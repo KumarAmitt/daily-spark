@@ -1,5 +1,5 @@
 <template>
-  <div class="flex py-4 mr-10 border-b">
+  <div class="flex py-4 mr-10 border-b last:border-none">
     <div v-if="!article.urlToImage" class="w-1/4 rounded-xl min-h-44 border bg-black flex items-center">
       <div class="text-white w-full text-center">No Image Available</div>
     </div>
