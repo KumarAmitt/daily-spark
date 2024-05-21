@@ -5,7 +5,9 @@
       <BusinessStory v-for="article in topFiveArticles" :key="article.title" :article="article"/>
     </ul>
     <div class="mt-2 text-center">
-      <BaseButton text="View More" outlined></BaseButton>
+      <BaseButton outlined>
+        <RouterLink :to="{name: 'category', params: {category: category}}">Read More</RouterLink>
+      </BaseButton>
     </div>
   </Section>
 </template>

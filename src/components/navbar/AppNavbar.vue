@@ -5,7 +5,7 @@
       <ul class="flex">
         <li v-for="navItem in navItems" :key="navItem.text" class="ml-10 first:ml-0">
           <RouterLink
-            :to="{ name: navItem.component}"
+            :to="{ name: navItem.component, params: navItem.params}"
             class="px-2 font-heading text-xl font-semibold transition duration-300 hover:border-b-2 hover:border-accent-primary hover:text-accent-primary"
           >
             {{ navItem.text }}
@@ -22,6 +22,7 @@ import { ref } from 'vue'
 
 const navItems = ref([
   { text: 'News', component: 'news' },
+  { text: 'Categories', component: 'category', params: {category: 'sports'} },
   { text: 'About', component: 'about' }
 ])
 </script>

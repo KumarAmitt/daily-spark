@@ -6,6 +6,7 @@ import { API_KEY, BASE_URL } from '@/constants.js'
 export const useNewsStore = defineStore('news', () => {
   const featuredStory = ref({})
   const featuredStories = ref([])
+  const newsSources = ref([])
 
   const fetchTopHeadlines = async () => {
     const url = `${BASE_URL}/top-headlines?country=in`
@@ -30,5 +31,5 @@ export const useNewsStore = defineStore('news', () => {
     }
   }
 
-  return { featuredStory, featuredStories, fetchTopHeadlines, fetchNewsByCategory }
+  return { featuredStory, featuredStories, newsSources, fetchTopHeadlines, fetchNewsByCategory }
 })

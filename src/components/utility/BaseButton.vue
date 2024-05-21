@@ -1,13 +1,14 @@
 <template>
   <button :class="['button', buttonClass]">
-    {{ text }}
+    <slot></slot>
+    {{text}}
   </button>
 </template>
 
 <script setup>
 import { computed } from 'vue'
 const props = defineProps({
-  text: { type: String, required: true },
+  text: { type: String, default: ''},
   outlined: { type: Boolean, default: false }
 })
 

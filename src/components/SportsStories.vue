@@ -2,8 +2,9 @@
   <section class="ml-4">
     <div class="flex justify-between items-center">
       <SectionTitle text="Sports"/>
-      <RouterLink :to="{name: 'category', params: {category: category}}">Read More</RouterLink>
-      <!--      <BaseButton text="Read More" outlined></BaseButton>-->
+      <BaseButton outlined>
+        <RouterLink :to="{name: 'category', params: {category: category}}">Read More</RouterLink>
+      </BaseButton>
     </div>
     <ul class="grid grid-cols-2 gap-4">
       <SportStory v-for="article in topFiveArticles" :key="article.title" :article="article"/>
