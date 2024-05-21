@@ -1,7 +1,7 @@
-import {ref} from 'vue'
-import {defineStore} from 'pinia'
+import { ref } from 'vue'
+import { defineStore } from 'pinia'
 import axios from 'axios'
-import {API_KEY, BASE_URL} from '@/constants.js'
+import { API_KEY, BASE_URL } from '@/constants.js'
 
 export const useNewsStore = defineStore('news', () => {
   const featuredStory = ref({})
@@ -11,7 +11,7 @@ export const useNewsStore = defineStore('news', () => {
   const fetchTopHeadlines = async () => {
     const url = `${BASE_URL}/top-headlines?country=in`
     try {
-      const response = await axios.get(url, {headers: {'Authorization': API_KEY}})
+      const response = await axios.get(url, { headers: { Authorization: API_KEY } })
       const featured = response.data.articles
       featuredStory.value = featured[0]
       featuredStories.value = featured.slice(1)
@@ -24,8 +24,8 @@ export const useNewsStore = defineStore('news', () => {
   const fetchNewsByCategory = async (category) => {
     const url = `${BASE_URL}/top-headlines?country=in&category=${category}`
     try {
-      const response = await axios.get(url, {headers: {'Authorization': API_KEY}})
-      return response.data.articles;
+      const response = await axios.get(url, { headers: { Authorization: API_KEY } })
+      return response.data.articles
     } catch (error) {
       console.log(error)
     }
@@ -34,12 +34,19 @@ export const useNewsStore = defineStore('news', () => {
   const fetchNewsSources = async () => {
     const url = `${BASE_URL}/sources?country=in`
     try {
-      const response = await axios.get(url, {headers: {'Authorization': API_KEY}})
+      const response = await axios.get(url, { headers: { Authorization: API_KEY } })
       console.log(response.data)
     } catch (error) {
       console.log(error)
     }
   }
 
-  return {featuredStory, featuredStories, newsSources, fetchTopHeadlines, fetchNewsByCategory, fetchNewsSources}
+  return {
+    featuredStory,
+    featuredStories,
+    newsSources,
+    fetchTopHeadlines,
+    fetchNewsByCategory,
+    fetchNewsSources
+  }
 })

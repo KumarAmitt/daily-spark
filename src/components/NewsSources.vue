@@ -3,12 +3,12 @@
 </template>
 
 <script setup>
-import {onMounted} from "vue";
-import {useNewsStore} from "@/stores/news.js";
+import { onMounted } from 'vue'
+import { useNewsStore } from '@/stores/news.js'
 
-const newsStore = useNewsStore();
+const newsStore = useNewsStore()
 
 onMounted(() => {
-  newsStore.fetchNewsSources();
+  newsStore.fetchNewsSources()
 })
 </script>
