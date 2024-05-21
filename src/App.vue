@@ -1,8 +1,10 @@
 <template>
-  <Navbar />
-  <RouterView />
+  <AppNavbar/>
+  <RouterView/>
+  <AppFooter/>
 </template>
 
 <script setup>
-import Navbar from '@/components/navbar/AppNavbar.vue'
+import AppFooter from "@/components/footer/AppFooter.vue";
+import AppNavbar from "@/components/navbar/AppNavbar.vue";
 </script>

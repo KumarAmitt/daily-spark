@@ -1,7 +1,7 @@
-import { ref } from 'vue'
-import { defineStore } from 'pinia'
+import {ref} from 'vue'
+import {defineStore} from 'pinia'
 import axios from 'axios'
-import { API_KEY, BASE_URL } from '@/constants.js'
+import {API_KEY, BASE_URL} from '@/constants.js'
 
 export const useNewsStore = defineStore('news', () => {
   const featuredStory = ref({})
@@ -31,5 +31,15 @@ export const useNewsStore = defineStore('news', () => {
     }
   }
 
-  return { featuredStory, featuredStories, newsSources, fetchTopHeadlines, fetchNewsByCategory }
+  const fetchNewsSources = async () => {
+    const url = `${BASE_URL}/sources?country=in`
+    try {
+      const response = await axios.get(url, {headers: {'Authorization': API_KEY}})
+      console.log(response.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  return {featuredStory, featuredStories, newsSources, fetchTopHeadlines, fetchNewsByCategory, fetchNewsSources}
 })
