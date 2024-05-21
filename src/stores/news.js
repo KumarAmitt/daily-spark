@@ -8,9 +8,9 @@ export const useNewsStore = defineStore('news', () => {
   const featuredStories = ref([])
 
   const fetchTopHeadlines = async () => {
-    const url = `${BASE_URL}/top-headlines?country=in&apiKey=${API_KEY}`
+    const url = `${BASE_URL}/top-headlines?country=in`
     try {
-      const response = await axios.get(url)
+      const response = await axios.get(url, {headers: {'Authorization': API_KEY}})
       const featured = response.data.articles
       featuredStory.value = featured[0]
       featuredStories.value = featured.slice(1)
@@ -21,9 +21,9 @@ export const useNewsStore = defineStore('news', () => {
   }
 
   const fetchNewsByCategory = async (category) => {
-    const url = `${BASE_URL}/top-headlines?country=in&category=${category}&apiKey=${API_KEY}`
+    const url = `${BASE_URL}/top-headlines?country=in&category=${category}`
     try {
-      const response = await axios.get(url)
+      const response = await axios.get(url, {headers: {'Authorization': API_KEY}})
       return response.data.articles;
     } catch (error) {
       console.log(error)

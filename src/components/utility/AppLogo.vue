@@ -27,5 +27,5 @@ const iconClass = computed(() =>
 const textClass = computed(() =>
   props.size === 'small' ? 'text-lg' : props.size === 'medium' ? 'text-xl' : 'text-2xl'
 )
-const logoLink = computed(() => (props.isLink ? 'home' : ''))
+const logoLink = computed(() => (props.isLink ? 'news' : ''))
 </script>

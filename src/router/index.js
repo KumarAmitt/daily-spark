@@ -18,7 +18,8 @@ const router = createRouter({
       path: '/category/:category',
       name: 'category',
       component: () => import('../views/CategoryView.vue')
-    }
+    },
+    {path: '/:notFound(.*)', redirect: '/'}
   ]
 })
 

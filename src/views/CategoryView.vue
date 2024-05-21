@@ -1,7 +1,8 @@
 <template>
-  <h1>Category Page</h1>
+  <CategoryNavbar/>
 </template>
 
 <script setup>
 
+import CategoryNavbar from "@/components/navbar/CategoryNavbar.vue";
 </script>
