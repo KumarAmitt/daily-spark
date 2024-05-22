@@ -19,11 +19,15 @@ const router = createRouter({
       name: 'category',
       component: () => import('../views/CategoryView.vue')
     },
-    { path: '/:notFound(.*)', redirect: '/' }
+    {path: '/:notFound(.*)', redirect: '/'}
   ],
   scrollBehavior() {
     return {top: 0, left: 0, behavior: 'smooth'}
   }
+})
+
+router.beforeEach(function (to, from, next) {
+  to.fullPath === '/category' ? next({name: 'category', params: {category: 'business'}}) : next()
 })
 
 

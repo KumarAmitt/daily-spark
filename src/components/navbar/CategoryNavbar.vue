@@ -6,15 +6,11 @@
       </RouterLink>
     </li>
   </ul>
-  <h1>{{ route.params.category }}</h1>
-  <pre>{{ route }}</pre>
 </template>
 
 <script setup>
 import {ref} from 'vue'
-import { useRoute } from 'vue-router'
 
-const route = useRoute()
 const categories = ref([
   'business',
   'entertainment',
