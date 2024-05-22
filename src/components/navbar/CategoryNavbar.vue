@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import {ref} from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
@@ -24,6 +24,8 @@ const categories = ref([
   'sports',
   'technology'
 ])
+
+
 </script>
 
 <style scoped>

@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import {createRouter, createWebHistory} from 'vue-router'
 import NewsView from '@/views/NewsView.vue'
 
 const router = createRouter({
@@ -15,12 +15,16 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
-      path: '/category/:category',
+      path: '/category/:category?',
       name: 'category',
       component: () => import('../views/CategoryView.vue')
     },
     { path: '/:notFound(.*)', redirect: '/' }
-  ]
+  ],
+  scrollBehavior() {
+    return {top: 0, left: 0, behavior: 'smooth'}
+  }
 })
+
 
 export default router
